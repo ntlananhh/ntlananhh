@@ -255,7 +255,7 @@ p .banner-quote{
         display: none;
     }
 }
-/*used for screen readersss*/
+/*used for screen readers*/
 @media speech and (min-width: 480px){
     body{
         background-color: #464644;
