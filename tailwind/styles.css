@@ -1,0 +1,137 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+    color: #61615f;
+    padding-top: 65px; 
+}
+p{
+    font-size: 16px;
+}
+section, footer{
+    margin-top: 20px;
+}
+.navbar-brand{
+    color: rgb(104, 89, 69);
+}
+.banner-content{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: rgb(54, 53, 53);
+}
+.banner-title{
+    font-size: 80px;
+    line-height: .8;
+}
+.banner-title span{
+    text-shadow: 0 10px 25px rgba(0, 0, 0, 0.281);
+}
+p .banner-quote{
+    width: 60%;
+}
+.banner-img{
+    padding: 0;
+}
+.banner-img img{
+    width: 100%;
+}
+
+#project .project-img{
+    width: 100%;
+    position: relative;
+    z-index: 0;
+}
+#project .project-img::before{
+    content:'';
+    position: absolute;
+    top:0;
+    left: 0;
+    background-color: #464644;
+    z-index: -1;
+}
+#contact{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.contact-img img{
+    width: 100%;
+    z-index: 1;
+}
+
+.contact-img img::after{
+    content: '';
+    z-index: -1;
+    top: -20px;
+    left: -10px;
+    width: inherit;
+    height: inherit;
+    background-color: rgba(41, 40, 39, 0.575);
+}
+.contact-form{
+    padding: 20px 20px;
+}
+.contact-form .form-group{
+    padding-left: 0px;
+}
+.contact-form .btn{
+    background-color: #61615f;
+    color: white;
+}
+.contact-form .form-group input, .form-group textarea {
+    outline: none;
+    box-shadow:none !important;
+    margin: 20px 0px;
+  }
+
+.contact-form .form-group  textarea {
+    height: 150px;
+}
+
+
+
+
+/*--------------media type-------------------*/
+/*for computer screens, tablets and, smart-phones/*
+
+/*Ex: used for small device like smartphone, tablet (screen width devices less than 768px)*/
+@media only screen and (max-width: 768px) {
+    #contact{
+        flex-direction: column;
+    } 
+    .banner-img {
+        display: none;
+    }
+}
+/*used for for printers*/
+@media  print{
+    .contact-img, #banner{
+        display: none;
+    }
+}
+/*used for screen readers*/
+@media speech and (min-width: 480px){
+    body{
+        background-color: #464644;
+    }
+    p{
+        color:white;
+    }
+}
+
+/*used for the viewport is in a portrait orientation*/
+/*compare the width and height of the viewport*/
+@media only screen and (orientation: portrait) {
+    .banner-img{
+        height: 300px;
+    }
+    .banner-text .leadquote{
+        display: none;
+    }
+}
+
+@media only screen and (max-resolution: 100dpi){
+    body{
+        background-color: #464644;
+    }
+}
