@@ -1,0 +1,260 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+    color: #61615f;
+    padding-top: 65px; 
+}
+p{
+    font-size: 18px;
+}
+section, footer{
+    margin-top: 30px;
+}
+.navbar-brand{
+    color: rgb(104, 89, 69);
+}
+
+#banner{
+    background-color: #4d4d4b;
+    margin-top: 0px;
+}
+.banner-content{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: rgb(209, 203, 203);
+}
+.banner-title{
+    font-size: 100px;
+    line-height: .8;
+    
+}
+.banner-title span{
+    text-shadow: 0 10px 25px rgba(0, 0, 0, 0.555);
+}
+p .banner-quote{
+    width: 60%;
+}
+.banner-img{
+    padding: 0;
+}
+.banner-img img{
+    width: 100%;
+    
+}
+#about-me img{
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    z-index: 0;
+}
+#about-me .img-frame{
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    top: 30px;
+    left: 30px;
+    background-color: rgba(36, 35, 33, 0.336);
+    z-index: -1;
+}
+#about-me .aboutme-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#about-me .aboutme-content{
+    text-indent: 30px;
+    text-align: justify;
+}
+#about-me .aboutme-content h2{
+    text-align: left;
+}
+#project .project-img{
+    width: 100%;
+    position: relative;
+    z-index: 0;
+}
+#project .project-img{
+    width: 100%;
+}
+#project .project-img::before{
+    content:'';
+    position: absolute;
+    top:0;
+    left: 0;
+    background-color: #464644;
+    z-index: -1;
+}
+.img-hover-zoom {
+    height: 150px; 
+    overflow: hidden; 
+}
+.img-hover-zoom img {
+    transition: transform .5s ease;
+}
+  
+.img-hover-zoom:hover img {
+    transform: scale(1.5);
+}
+.project-item .project-description {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #36383893;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.project-item:hover .project-description {
+    opacity: 1;
+}
+  
+.project-description  p{
+    color: rgb(221, 219, 219);
+    font-size: 22px;
+    position: absolute;
+    top: 50%;
+    left: 50%;  
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+
+#contact{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.contact-img img{
+    width: 100%;
+    z-index: 1;
+}
+
+.contact-img img::after{
+    content: '';
+    z-index: -1;
+    top: -20px;
+    left: -10px;
+    width: inherit;
+    height: inherit;
+    background-color: rgba(41, 40, 39, 0.575);
+}
+.contact-form{
+    padding: 20px 20px;
+}
+.contact-form .form-group{
+    padding-left: 0px;
+}
+.contact-form .btn{
+    background-color: #61615f;
+    color: white;
+}
+.contact-form .form-group input, .form-group textarea {
+    outline: none;
+    box-shadow:none !important;
+    margin: 20px 0px;
+  }
+
+.contact-form .form-group  textarea {
+    height: 150px;
+}
+
+#footer{
+    background-color: #61615f;
+    color:white;
+    padding: 25px 20px 5px 20px;
+}
+#footer ul{
+    list-style-type: none;
+}
+#footer ul li i{
+    font-size: 18px;
+}
+#footer .links a{
+    color: white;
+}
+#footer .links a:hover{
+    color: rgb(218, 213, 213);
+    text-decoration: none;
+}
+
+/*--------------media type-------------------*/
+/*for computer screens, tablets and, smart-phones/*
+
+/*Ex: used for small device like smartphone, tablet (screen width devices less than 768px)*/
+@media only screen and (max-width: 768px) {
+    #contact{
+        flex-direction: column;
+    }
+    #banner {
+        padding: 20px ;
+    }
+    .banner-img {
+        display: none;
+    }
+    .banner-title{
+        font-size: 80px;
+    }
+    #project .project-img{
+        margin-top: 15px;
+    }
+    #contact .contact-img{
+        display: none;
+    }
+    #about-me .aboutme-content{
+        margin-top: 15px;
+    }
+    #about-me .aboutme-content{
+        text-indent: 20px; 
+    }
+    .img-hover-zoom {
+        height: inherit; 
+        overflow: hidden; 
+    }
+    section, footer{
+        margin-top: 15px;
+    }
+}
+/*used for for printers*/
+@media  print{
+    .contact-img, #banner{
+        display: none;
+    }
+}
+/*used for screen readers*/
+@media speech and (min-width: 480px){
+    body{
+        background-color: #464644;
+    }
+    p{
+        color:white;
+    }
+}
+
+/*used for the viewport is in a portrait orientation*/
+/*compare the width and height of the viewport*/
+@media only screen and (orientation: portrait) {
+    .banner-img{
+        height: 300px;
+    }
+    .banner-text .leadquote{
+        display: none;
+    }
+}
+
+@media only screen and (max-resolution: 100dpi){
+    body{
+        background-color: #464644;
+    }
+}
