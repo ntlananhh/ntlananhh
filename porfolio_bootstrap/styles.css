@@ -123,11 +123,7 @@ p .banner-quote{
     transform: translate(-50%, -50%);
     text-align: center;
 }
-#services .card{
-    border: none;
-    /* background-color: #0f0f0f; */
-    padding: 20px;
-}
+
 #services .card-body{
     padding: 10px 0px ;
 }
@@ -141,19 +137,31 @@ p .banner-quote{
     margin-bottom: 15px;
     text-align: center;
 }
-#services .service-icon:first-child{
+#services .card-img-top:first-child{
     color:rgb(2, 142, 223);
     background-color: rgba(156, 210, 241, 0.212);
 
 }
-#services .service-icon:nth-child(2){
+#services .card-img-top:nth-child(2){
     color:rgb(235, 61, 119);
     background-color: rgba(235, 61, 119, 0.596);
 
 }
-#services .service-icon:last-child{
+#services .card-img-top:last-child{
     color:rgb(100, 14, 197);
     background-color: rgba(99, 14, 197, 0.205);
+}
+#services .card{
+    background-color: #464644;
+    color:lightgray;
+    border-radius: 10px;
+    border-bottom: 5px solid rgb(2, 142, 223);
+    margin: 0 15px;
+    padding: 15px 20px;
+    box-shadow: 5px 5px 5px #0a0a0a49;
+}
+#services .card .card-title{
+    font-weight: bolder;
 }
 #contact{
     display: flex;
