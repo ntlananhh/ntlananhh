@@ -123,8 +123,38 @@ p .banner-quote{
     transform: translate(-50%, -50%);
     text-align: center;
 }
+#services .card{
+    border: none;
+    /* background-color: #0f0f0f; */
+    padding: 20px;
+}
+#services .card-body{
+    padding: 10px 0px ;
+}
+/* #services .card-text{
+    text-indent: 20px;
+} */
+#services .service-icon{
+    font-size: 45px;
+    border-radius: 50%;
+    padding: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+#services .service-icon:first-child{
+    color:rgb(2, 142, 223);
+    background-color: rgba(156, 210, 241, 0.212);
 
+}
+#services .service-icon:nth-child(2){
+    color:rgb(235, 61, 119);
+    background-color: rgba(235, 61, 119, 0.596);
 
+}
+#services .service-icon:last-child{
+    color:rgb(100, 14, 197);
+    background-color: rgba(99, 14, 197, 0.205);
+}
 #contact{
     display: flex;
     align-items: center;
