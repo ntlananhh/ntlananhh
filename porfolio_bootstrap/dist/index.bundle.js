@@ -1,1 +1,1 @@
-console.log("TEST WEBPACK 1"),console.log("TEST WEBPACK 2");
+!function(){"use strict";console.log("TEST WEBPACK 1")}(),console.log("TEST WEBPACK 2");

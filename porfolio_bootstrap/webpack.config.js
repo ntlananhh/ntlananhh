@@ -1,34 +1,38 @@
 
+  const path = require('path'); 
+  const MiniCssExtractPlugin = require("mini-css-extract-plugin"); 
+  const postcss = require('postcss') 
+   
   module.exports = {
     entry: ['./src/script1.js', './src/script2.js'],
     output: {
       filename: "index.bundle.js"
     },
-    module: {
-        rules: [
-            {
-              test: /\.css$/i,
-              use: [
-                "style-loader",
-                "css-loader",
-                {
-                  loader: "postcss-loader",
-                  options: {
-                    postcssOptions: {
-                      plugins: [
-                        [
-                          "postcss-preset-env",
-                          {
-                            // Options
-                          },
-                        ],
-                      ],
-                    },
-                  },
-                },
-              ],
-            },
-          ],
+    plugins: [ 
+      new MiniCssExtractPlugin(), 
+    ], 
+    module: { 
+      rules: [ 
+        { 
+          test: /\.css$/, 
+          use: [MiniCssExtractPlugin.loader, { 
+            loader: 'css-loader', 
+            options: { 
+              importLoaders: 1 
+            } 
+          }, 
+          { 
+            loader: 'postcss-loader', 
+            options: { 
+              postcssOptions: { 
+                ident: 'postcss', 
+              } 
+            } 
+          } 
+          ], 
+        }, 
+      ], 
+    }, 
 
 
 
@@ -65,7 +69,6 @@
     //     },
 
     //   ]
-    },
     resolve: {
       extensions: ['', '.js']
     },
