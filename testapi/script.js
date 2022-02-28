@@ -66,8 +66,8 @@ const deleteUser = async(id)=>{
 
 //---------------------------------------------------------------
 const addUser = (form) =>{
-    console.log(serialize(form));
-    console.log("hih");
+    const myobj = JSON.parse('{' + serialize(document.forms[form]) .toString() + '}');
+    console.log(myobj);
 // const data = { name: 'example',
 // email: 'test1@gmail.com',
 // gender: 'male',
