@@ -1,6 +1,7 @@
-const axios = require ('axios');
 
-axios.get ('http://webcode.me') .then (resp => {
 
-    console.log (resp.data);
+
+axios.get('https://gorest.co.in/public/v2/users').then(response => {
+
+    console.log(response.data);
 });
