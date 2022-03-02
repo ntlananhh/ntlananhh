@@ -11,7 +11,7 @@ const  callAPI = async(method, url, payload) =>{
             'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
         }
     }
-    if(method =='post'){
+    if(method =='post' || method =='put'){
         return await axios.post(config, payload)
         .then(async (response) => {
             console.log(response.data)
@@ -32,7 +32,7 @@ const  callAPI = async(method, url, payload) =>{
     
     
 }
-
+//---------------------------------------------------------------------------------------------
 //----GET ALL USER
 async function getAllUser() {
     try {
@@ -65,13 +65,14 @@ async function getUserById(id) {
 async function deleteUser(id) {
     try {
         await callAPI('delele','https://reqres.in/api/users/'+ id.toString(), '')
-        console.log("Deleted user " + id + "::::" +response.data)
+        console.log("Deleted user " + id + "::::" + response.data)
       }
     catch (error) {
         console.log(error);
     }
 }
 
+//----ADD USER
 async function addUser(payload) {
     await callAPI('post', 'https://reqres.in/api/users', payload).then(data => {
         console.log('RESPONSE:::'+ data);
@@ -80,6 +81,7 @@ async function addUser(payload) {
     
 }
 
+//----UPDATE USER BY ID
 async function updateUser(id, payload) {
     await callAPI('put', 'https://reqres.in/api/users/' + id.toString(), payload).then(data => {
         console.log('updated:::'+ data);
@@ -88,7 +90,7 @@ async function updateUser(id, payload) {
     
 }
 
-
+//------SHOW DATA TO HTML
 window.addEventListener('load', async () => {
     const listUser = await getAllUser();
     let table_users = `<tr><thead><th>ID</th><th>First Name</th><th>Last name</th><th>Email</th></thead></tr>`;
@@ -111,8 +113,8 @@ window.addEventListener('load', async () => {
     "name": "test",
     "job": "test"
 }
-//   getUserById(2);
+   getUserById(2);
 //   addUser(payload);
 //   updateUser(2, payload);
-  deleteUser(2)
+   deleteUser(2)
 
